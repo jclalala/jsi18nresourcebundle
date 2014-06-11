@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib
+	xsi:schemaLocation="
+            http://java.sun.com/xml/ns/javaee 
+            http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	version="2.1">
+
+	<description>Taglib for generating JS object from JAVA ResourceBundle</description>
+	<tlib-version>1.0</tlib-version>
+	<short-name>jsi18nresourcebundleTags</short-name>
+	<uri>http://www.mediumtech.co/jsp/taglib/jsi18nresourcebundleTags</uri>
+	<tag>
+		<description>Tag used to generate JS object from JAVA ResourceBundle. The locale is read from PageContext's Config which can be set using JSTL formatting (fmt) library's setLocale tag.</description>
+		<name>generateJSConstant</name>
+		<tag-class>com.medium.jsp.taglib.i18n.JSConstantObjectGenerator</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description>Variable name of JS object to create. Default is 'constants'. Use this field to avoid duplicating JS variable name</description>
+			<name>jsObjectName</name>
+		</attribute>
+		<attribute>
+			<description>Base name of ResourceBundle to load</description>
+			<name>resourceBundleBaseName</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+</taglib>
